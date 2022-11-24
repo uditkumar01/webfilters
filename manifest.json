@@ -1,6 +1,6 @@
 {
     "name": "webfilters",
-    "description": "Test ext",
+    "description": "Web filters",
     "version": "0.0.1",
     "manifest_version": 3,
     "icons": {
