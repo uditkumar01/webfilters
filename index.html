@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="content-language" content="en-EN" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBFILTERS</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+
+  <!-- favicon  -->
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="popup/css/popup.css" type="text/css" />
+</head>
+
+<body id="filterextid">
+  <div class="select">
+    <select id="resolution">
+      <option value="2160x3840">2160p</option>
+      <option value="1440x2560">1440p</option>
+      <option value="1080x1920" selected>1080p (default)</option>
+      <option value="720x1280">720p</option>
+      <option value="480x640">480p</option>
+      <option value="240x320">240p</option>
+    </select>
+
+    <label class="switch">
+      <input id="toggle-btn" type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="grid">
+  </div>
+
+
+  <script src="popup/js/stateManager.js"></script>
+  <script src="popup/js/main.js"></script>
+</body>
+
+</html>

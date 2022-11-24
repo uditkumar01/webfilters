@@ -1,0 +1,229 @@
+/* normalize css starts here */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* normalize css ends here */
+
+html,
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+        sans-serif;
+    color: #fff;
+    background-color: #222;
+    overflow: auto;
+    width: 300px;
+    height: 450px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Works on Chrome, Edge, and Safari */
+#filterextid::-webkit-scrollbar {
+    width: 2px;
+}
+
+#filterextid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#filterextid::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+}
+
+/* Only IE */
+#filterextid {
+    scrollbar-face-color: transparent;
+    scrollbar-shadow-color: transparent;
+    scrollbar-highlight-color: transparent;
+}
+
+/* Only FireFox */
+#filterextid {
+    scrollbar-color: gray transparent;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+
+#filterextid .grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+#filterextid .card {
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    padding: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+#filterextid .grid * {
+    transition: all 0.1s ease-in-out;
+}
+
+#filterextid .card .card__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#filterextid .card .card__button.loading {
+    background-color: rgb(71, 71, 71);
+    cursor: wait;
+}
+
+#filterextid .card .card__button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    animation: spin 1s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+#filterextid .card.active {
+    background-color: transparent;
+    border: 2px solid rgb(0, 204, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+
+#filterextid .card-body {
+    background-color: #c76905;
+    border-radius: 5px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#filterextid .card-body h3 {
+    color: azure;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    padding: 0.2rem;
+    border-radius: 5px;
+}
+
+#filterextid .card-body:nth-of-type(1) {
+    background-color: #8dc705;
+}
+
+#filterextid .select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    width: 100%;
+}
+
+#filterextid select.resolution {
+    padding: 0.2rem 0.2rem;
+    background-color: #222;
+    color: #fff;
+}
+
+#filterextid .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+}
+
+#filterextid .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#filterextid .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#filterextid .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#filterextid input:checked+.slider {
+    background-color: #2196F3;
+}
+
+#filterextid input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+#filterextid input:checked+.slider:before {
+    -webkit-transform: translateX(21px);
+    -ms-transform: translateX(21px);
+    transform: translateX(21px);
+}
+
+/* Rounded sliders */
+#filterextid .slider.round {
+    border-radius: 34px;
+}
+
+#filterextid .slider.round:before {
+    border-radius: 50%;
+}

@@ -1,0 +1,54 @@
+{
+    "name": "webfilters",
+    "description": "Test ext",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "icons": {
+        "16": "./assets/favicon/favicon-16x16.png",
+        "48": "./assets/favicon/favicon-32x32.png",
+        "128": "./assets/favicon/android-chrome-192x192.png"
+    },
+    "background": {
+        "service_worker": "./assets/scripts/serviceWorker/index.js"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "./assets/favicon/favicon-16x16.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "./assets/scripts/content/constants.js",
+                "./assets/scripts/content/index.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions": [
+        "webNavigation",
+        "tabs",
+        "nativeMessaging",
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "wf.js",
+                "assets/*"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'"
+    }
+}
